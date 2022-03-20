@@ -1,0 +1,357 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap);
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+/* 스크롤바 */
+::-webkit-scrollbar {
+  width: 15px;
+}
+/* 스크롤바 막대 설정*/
+::-webkit-scrollbar-thumb {
+  background-color: grey;
+
+  background-clip: padding-box;
+  border: 2px solid transparent;
+} /* 스크롤바 뒷 배경 설정*/
+::-webkit-scrollbar-track {
+  background-color: #2f3542;
+}
+.markdown {
+  color: #c7d1df;
+  font-size: 1.1rem;
+  @media print {
+    *,
+    *:before,
+    *:after {
+      background: transparent !important;
+      color: #000 !important;
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+      text-decoration: underline;
+    }
+
+    a[href]:after {
+      content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+      content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+      content: "";
+    }
+
+    pre,
+    blockquote {
+      border: 1px solid #999;
+      page-break-inside: avoid;
+    }
+
+    thead {
+      display: table-header-group;
+    }
+
+    tr,
+    img {
+      page-break-inside: avoid;
+    }
+
+    img {
+      padding: 16px;
+      max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+      orphans: 3;
+      widows: 3;
+    }
+
+    h2,
+    h3 {
+      page-break-after: avoid;
+    }
+  }
+  strong {
+    color: whitesmoke;
+    font-weight: 700;
+  }
+  pre,
+  code {
+    font-family: "Roboto Mono", Pretendard, monospace;
+  }
+  .image-caption {
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+    color: #999;
+  }
+  pre {
+    padding: 0.5rem;
+    line-height: 1.25;
+    overflow-x: scroll;
+  }
+
+  //a,
+  //a:visited {
+  //  text-decoration-line: underline;
+  //    color:  #E2E8F0;
+  //  text-decoration-color: #3b82f6;
+  //  text-decoration-thickness: 2px;
+  //}
+  a {
+    position: relative;
+    transition: 0.3s linear;
+    padding: 0 3px 0 3px;
+    color: #cbd5e1;
+  }
+
+  a::after {
+    width: 100%;
+    position: absolute;
+    bottom: -15%;
+    left: 0;
+    background-color: rgba(244, 114, 182, 0.5);
+    height: 10%;
+    content: "";
+    transition: 0.3s ease-in-out;
+    z-index: 0;
+    margin-top: 5px;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: white;
+  }
+
+  //a:hover::after { height: 15%; }
+  //a:hover,
+  //a:focus,
+  //a:active {
+  //  transition: 3s ease-in-out;
+  //  text-decoration-line: underline;
+  //  color:  #E2E8F0;
+  //  text-decoration-thickness: 4px;
+  //}
+
+  .modest-no-decoration {
+    text-decoration: none;
+  }
+
+  @media screen and (min-width: 32rem) and (max-width: 48rem) {
+    html {
+      font-size: 15px;
+    }
+  }
+
+  @media screen and (min-width: 48rem) {
+    html {
+      font-size: 16px;
+    }
+  }
+
+  p,
+  .modest-p {
+    margin-bottom: 1.2rem;
+    margin-top: 1rem;
+    font-family: Pretendard, "Noto Sans KR", sans-serif;
+  }
+
+  h1,
+  h2,
+  .modest-h2,
+  h3,
+  .modest-h3,
+  h4,
+  .modest-h4 {
+    margin: 2.5rem 0 1rem;
+    font-weight: inherit;
+    line-height: 1.42;
+    color: #e2e8f0;
+  }
+  h2,
+  h3,
+  h4 {
+    border-left: 2px solid #66d9ef;
+    padding-left: 16px;
+  }
+  h1,
+  .modest-h1 {
+    margin-top: 0;
+    font-size: 2.5rem;
+  }
+
+  h2,
+  .modest-h2 {
+    font-size: 2rem;
+  }
+
+  h3,
+  .modest-h3 {
+    font-size: 1.6rem;
+  }
+
+  h4,
+  .modest-h4 {
+    font-size: 1.414rem;
+  }
+
+  h5,
+  .modest-h5 {
+    font-size: 1.121rem;
+  }
+
+  h6,
+  .modest-h6 {
+    font-size: 0.88rem;
+  }
+
+  small,
+  .modest-small {
+    font-size: 0.707em;
+  }
+
+  /* https://github.com/mrmrs/fluidity */
+  li::marker {
+    content: "› ";
+    color: hotpink;
+  }
+  li {
+    list-style-position: inside;
+  }
+  img {
+    display: block;
+    margin: 3rem auto;
+    max-width: 70%;
+
+    border-radius: 6px;
+    background-color: rgb(231, 231, 231);
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+      rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  }
+  canvas,
+  iframe,
+  video,
+  svg,
+  select,
+  textarea {
+    max-width: 100%;
+  }
+
+  @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
+
+  @import url(http://fonts.googleapis.com/css?family=Arimo:700,700italic);
+  @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
+
+  font-family: Pretendard, "Noto Sans KR", sans-serif;
+  font-weight: 300;
+  margin: 0 auto;
+  max-width: 52rem;
+  line-height: 1.65;
+  padding: 0.25rem;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: Pretendard, "Noto Sans KR", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3 {
+    //border-bottom: 2px solid #fafafa;
+    margin-bottom: 1.15rem;
+    //text-align: center;
+  }
+
+  blockquote {
+    padding: 1rem;
+  }
+
+  pre {
+    //color: #38BDF8;
+    //color : #cb4b16;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-radius: 0.375rem;
+    display: inline-block;
+    line-height: 1.4;
+    font-size: 0.875rem;
+    overflow: visible;
+    box-shadow: none;
+  }
+  code {
+    //color: #38BDF8;
+    background-color: #202c3f;
+    color: #66d9ef;
+    //color : #cb4b16;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
+    border-radius: 0.375rem;
+    display: inline-block;
+    line-height: 1.4;
+    font-size: 0.875rem;
+    overflow: visible;
+    box-shadow: none;
+  }
+  pre {
+    code {
+      background-color: transparent;
+      color: #cbd5e1;
+      padding-left: 0.3rem;
+      padding-right: 0.3rem;
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+      border-radius: 0.375rem;
+      display: inline-block;
+      line-height: 1.4;
+      font-size: 0.875rem;
+      overflow: visible;
+      box-shadow: none;
+    }
+  }
+
+  .no-baseline::after {
+    height: 0;
+  }
+}
+
+.toc-depth-2 {
+  font-size: 1rem;
+}
+
+.toc-depth-3 {
+  font-size: 0.9rem;
+}
+
+.active {
+  color: #38bdf8;
+}
+.toc li:hover {
+  color: rgb(203, 213, 225);
+  cursor: pointer;
+}
+
+.toc {
+  color: #94a3b8;
+  transition: 0.3s;
+}
+.toc li {
+  padding: 4px 0;
+}
+.toc-depth-2 {
+  margin-left: 1rem;
+}

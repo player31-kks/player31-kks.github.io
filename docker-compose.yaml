@@ -1,0 +1,16 @@
+version: "3.1"
+
+services:
+  jeky:
+    # 컨테이너 이름
+    container_name: kyoBlog
+    image: jekyll/jekyll # 컨테이너 이미지 docker file로 쓸 수 있음
+    restart: always # 서버 유지를 위해서 끊김 없이 동작하게 함
+    volumes:
+      - ./:/srv/jekyll #host pc : cotainer 내부 명령
+    ports:
+      - "4000:4000"
+
+    command: >
+      sh -c "bundle install && rougify style monokai.sublime > assets/css/syntax.css &&
+            jekyll serve --force_polling"

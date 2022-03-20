@@ -1,0 +1,39 @@
+collections:
+  authors:
+    output: true
+
+sass:
+  load_paths:
+    - node_modules
+    
+markdown: kramdown
+# kramdown : markdown의 개조판.
+# markdown에서 불편한 사항을 개선한 형태.
+
+highlighter: rouge
+# text highlighter로 rouge이용
+# 2016.02월 이후로 syntax highlighter는 rouge만 지원.
+# Pygments 사용불가.
+#comments:
+#  provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
+#  disqus:
+#    shortname            : 'youngkyo0504' # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+#  discourse:
+#    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
+#  facebook:
+#  # https://developers.facebook.com/docs/plugins/comments
+
+#plugins:
+#url: "https://youngkyo0504.github.io"
+#domain: "https://youngkyo0504.github.io"
+baseurl: /
+gems:
+  - jekyll-highlight
+# Analytics
+
+#analytics:
+#  provider : "google-gtag" #false(defalut)
+#  google:
+#    stream_id : "G-7J3KMMHSE7"
+
+

@@ -1,0 +1,32 @@
+- name: NestJs
+  src: /assets/images/category/nestJs.png
+  href: /nestjs
+
+- name: Typescript
+  src: /assets/images/category/typescript.png
+  href: /nestjs
+
+- name: GraphQL
+  src: /assets/images/category/graphQL.png
+  href: /graphql
+
+- name: Database
+  src: /assets/images/category/database.png
+  href: /nestjs
+
+- name: DesignPattern
+  src: /assets/images/category/design_pattern.png
+  href: /nestjs
+
+- name: Docker
+  src: /assets/images/category/docker.png
+  href: /nestjs
+  
+- name: ETC
+  src: /assets/images/category/etc.png
+  href: /etc
+  
+- name: NodeJs
+  src : /assets/images/category/nodeJs.png
+  href: /nodejs
+

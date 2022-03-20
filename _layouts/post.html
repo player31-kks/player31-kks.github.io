@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <script defer src="/assets/js/tailwindcss.js"></script> -->
+  <script defer src="/assets/js/toc.js"></script>
+  <script defer src="/assets/js/codeblock_circle.js"></script>
+  <link rel="stylesheet" href="/assets/css/markdown.css" />
+  <link rel="stylesheet" href="/assets/css/mysyntax.css" />
+  <link rel="stylesheet" href="/assets/css/input.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <main class="max-w-[95rem] mx-auto px-4 sm:px-6 md:px-8">
+    <div
+      class="hidden lg:block fixed z-20 inset-0 left-[max(0px,calc(50%-55rem))] right-auto w-[19.5rem] pb-10 px-8 overflow-y-auto">
+      <nav id="nav" class="lg:text-sm lg:leading-6 relative">
+        <div class="sticky top-0 -ml-0.5 pointer-events-none">
+          <div class="bg-gray-900 relative pointer-events-auto"></div>
+          <div class="h-8 bg-gradient-to-b from-gray-900"></div>
+        </div>
+        <ul>
+          {% assign category = page.categories[0] %} {% for subcategory in
+          site.data.subcategories[category] %}
+          <li class="mt-12 lg:mt-8">
+            <h5 class="mb-8 lg:mb-3 font-semibold text-gray-200">
+              {{subcategory}}
+            </h5>
+            <ul class="space-y-6 lg:space-y-2">
+              {% for post in site.categories[subcategory] reversed %} {% if
+              page.url == post.url %}
+              <li>
+                <a class="block border-l pl-4 -ml-px text-cyan-400 border-current font-semibold"
+                  href="{{ post.url }}">{{ post.title }}</a>
+              </li>
+              {% else %}
+              <li>
+                <a class="block border-l pl-4 -ml-px border-transparent border-gray-400 hover:border-gray-300 text-gray-400 hover:text-gray-300"
+                  href="{{ post.url }}">{{ post.title }}</a>
+              </li>
+              {% endif %} {% endfor %}
+            </ul>
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+    <section class="lg:pl-[15.5rem]">
+      <section class="markdown max-w-4xl mx-auto pt-5 pb-10 xl:max-w-none xl:ml-0 xl:mr-[15.5rem] xl:pr-16">
+        <a href="/subpages/category" class="no-baseline group lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-400">
+          <div
+            class="mr-4 rounded-md hover:text-cyan-100 group-hover:text-cyan-100 text-cyan-400 shadow-none group-hover:shadow-none group-hover:highlight-white/10 group-hover:shadow-sky-200 group-hover:bg-sky-500 bg-sky-500 highlight-white/10">
+          </div>
+
+          <div class="flex text-cyan-600 hover:text-cyan-400 items-center h-5">
+            <span><svg xmlns="http://www.w3.org/2000/svg" class="mr-1 h-5 w-5 mb-0.5 inline" viewBox="0 0 20 20"
+                fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z"
+                  clip-rule="evenodd" />
+              </svg></span>
+            <span class="align-bottom">{{category[1].size}} 목록으로 돌아가기</span>
+          </div>
+        </a>
+        <h1>{{page.title}}</h1>
+        {{content}}
+      </section>
+      <aside
+        class="toc-wrapper fixed z-20 top-[3.8125rem] bottom-0 right-[max(0px,calc(50%-55rem))] w-[19.5rem] py-10 px-8 overflow-y-auto hidden xl:block">
+      </aside>
+    </section>
+  </main>
+</body>
+
+</html>
