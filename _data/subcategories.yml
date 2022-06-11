@@ -1,5 +1,4 @@
 nestjs: [Getting Started, Core Concepts, Customization, Base Styles, Layout]
-java: [기본문법, 객체지향]
 nodejs: [ES6이후, 자바스크립트 자세히 보기]
 etc: [DNS]
-graphql: [Basic]
+graphql: [basic]

@@ -11,10 +11,10 @@ title: Rest 파라미터
 `the rest of`를 해석하면 나머지라는 뜻입니다.이를 생각하면서 살펴봐주세요. Rest 파라미터의 형태는 ...(세 개의 점)을 붙이 모습입니다.
 
 ```javascript
-function foo(param...rest){
+  function foo(param...rest){
     console.log(param) // 출력값 : 1
-	console.log(rest) // 출력값 : [2,3]
-}
+    console.log(rest) // 출력값 : [2,3]
+  }
 
 foo(1,2,3)
 ```
@@ -28,10 +28,10 @@ Rest 파라미터는 함수에 전달되고 남은 인수들을 배열로 받습
 - Rest 파라미터는 반드시 마지막 파라미터여야 합니다.
 
 ```javascript
-fuction foo(...rest, param){
-		console.log(rest)// 오류
-		console.log(param) // 오류
-}
+  function foo(...rest, param){
+      console.log(rest)// 오류
+      console.log(param) // 오류
+  }
 ```
 
 <br/>
@@ -39,10 +39,10 @@ fuction foo(...rest, param){
   <br/>
 
 ```javascript
-function foo(...rest, ...params){
-    console.log(rest) // syntax 오류
-    console.log(params) // syntax 오류
-}
+  function foo(...rest, ...params){
+      console.log(rest) // syntax 오류
+      console.log(params) // syntax 오류
+  }
 ```
 
 ## Rest 파라미터가 등장하기 전에는??
@@ -53,32 +53,32 @@ function foo(...rest, ...params){
 Rest 파라미터가 등장하기 전에는 `arguments`객체로 이를 해결했습니다. `arguments`는 함수 호출 시에 전달된 Input들의 정보를 담고 있는 객체입니다. 함수 내부에서 변수처럼 사용할 수 있습니다.
 
 ```javascript
-function foo() {
-  // 여러 input이 올 수 있음
-  console.log(arguments);
-}
+  function foo() {
+    // 여러 input이 올 수 있음
+    console.log(arguments);
+  }
 
-foo(1, 2, 3);
-// 출력값
-// '0':1
-// '1': 2
-// '2' : 3
-// length: 3
+  foo(1, 2, 3);
+  // 출력값
+  // '0':1
+  // '1': 2
+  // '2' : 3
+  // length: 3
 ```
 
 그러나 `arguments`객체는 `배열`이 아닌 `유사 배열 객체`이므로 배열 메서드를 이용할 수 없습니다. `Function.prototype.call`이나 `Function.prototype.apply`메서드를 사용해서 `arguments`객체를 배열로 변환해야합니다.
 
 ```javascript
-function foo() {
-  const array = Array.prototype.slice.call(arguments);
+  function foo() {
+    const array = Array.prototype.slice.call(arguments);
 
-  array.forEach((item) => {
-    console.log(item);
-  });
-}
+    array.forEach((item) => {
+      console.log(item);
+    });
+  }
 
-foo(1, 2, 3, 4);
-// 1,2,3,4
+  foo(1, 2, 3, 4);
+  // 1,2,3,4
 ```
 
 이 과정보다 `rest` 파라미터를 이용하는게 더 간편하죠? 이런 불편함이 rest 파라미터를 탄생시켰습니다. 참고로 `arrow function`에서는 arguments를 사용하지 못합니다. 이때는 반드시 `rest 파라미터`를 이용해야 합니다.
