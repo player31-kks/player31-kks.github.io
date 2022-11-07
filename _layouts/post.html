@@ -17,9 +17,9 @@
 </head>
 
 <body>
-  <main class="max-w-[95rem] mx-auto px-4 sm:px-6 md:px-8">
+  <main class="max-w-[105rem] mx-auto px-4 sm:px-6 md:px-8">
     <div
-      class="hidden lg:block fixed z-20 inset-0 left-[max(0px,calc(50%-55rem))] right-auto w-[19.5rem] pb-10 px-8 overflow-y-auto">
+      class="hidden lg:block fixed z-20 inset-0 left-[max(0px,calc(50%-65rem))] right-auto w-[19.5rem] pb-10 px-8 overflow-y-auto">
       <nav id="nav" class="lg:text-sm lg:leading-6 relative">
         <div class="sticky top-0 -ml-0.5 pointer-events-none">
           <div class="bg-gray-900 relative pointer-events-auto"></div>
@@ -68,8 +68,14 @@
             <span class="align-bottom">{{category[1].size}} 목록으로 돌아가기</span>
           </div>
         </a>
-        <h1>{{page.title}}</h1>
-        {{content}}
+        <header class="border-b-2 text-center mb-16">
+          <div class="mb-2 text-sm text-sky-400">{{page.categories[0]}}</div>
+          <h1>{{page.title}}</h1>
+          <div class="mb-4 text-sm">{{page.date | date: "%Y-%m-%d" }}</div>
+        </header>
+        <main class="px-24">
+          {{content}}
+        </main>
       </section>
       <aside
         class="toc-wrapper fixed z-20 top-[3.8125rem] bottom-0 right-[max(0px,calc(50%-55rem))] w-[19.5rem] py-10 px-8 overflow-y-auto hidden xl:block">
