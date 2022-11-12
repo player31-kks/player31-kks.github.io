@@ -4,7 +4,7 @@
 
 - name: Typescript
   src: /assets/images/category/typescript.png
-  href: /nestjs
+  href: /typescript
 
 - name: GraphQL
   src: /assets/images/category/graphQL.png

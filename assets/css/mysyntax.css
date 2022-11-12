@@ -12,7 +12,7 @@ div.highlighter-rouge {
   /* box-shadow: 0px 8px 15px #1b2535; */
   border: solid 0.1px #424346;
   border-radius: 6px;
-  background: linear-gradient(145deg, #1b2535, #1e293b);
+  background:  rgb(35, 39, 59);
   /* box-shadow:  20px 20px 60px #1a2332,
                -20px -20px 60px #232f44;} */
 }
