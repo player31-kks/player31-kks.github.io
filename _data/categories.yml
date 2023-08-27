@@ -12,14 +12,10 @@
 
 - name: Database
   src: /assets/images/category/database.png
-  href: /nestjs
+  href: /database
 
 - name: DesignPattern
   src: /assets/images/category/design_pattern.png
-  href: /nestjs
-
-- name: Docker
-  src: /assets/images/category/docker.png
   href: /nestjs
   
 - name: ETC
